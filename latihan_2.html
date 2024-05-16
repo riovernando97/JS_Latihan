@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Dasar</title>
+  </head>
+  <body>
+    <h2><b>LATIHAN PENGULANGAN DAN PENGKONDISIAN BERSARANG</b></h2>
+    <h3>Buka di console browser =></h3>
+    <pre>
+      function buatPiramida(tinggi) {
+        for (let i = 1; i <= tinggi; i++) {
+          let baris = '';
+          for (let j = 1; j <= tinggi - i; j++) {
+            baris += ' ';
+          }
+          for (let k = 1; k <= 2 * i - 1; k++) {
+            baris += '*';
+          }
+          console.log(baris);
+        }
+      }
+
+      buatPiramida(10);
+    </pre>
+    <script>
+      function buatPiramida(tinggi) {
+        for (let i = 1; i <= tinggi; i++) {
+          let baris = '';
+          for (let j = 1; j <= tinggi - i; j++) {
+            baris += ' ';
+          }
+          for (let k = 1; k <= 2 * i - 1; k++) {
+            baris += '*';
+          }
+          console.log(baris);
+        }
+      }
+
+      buatPiramida(10); // Memanggil fungsi dengan tinggi piramida 5
+    </script>
+  </body>
+</html>

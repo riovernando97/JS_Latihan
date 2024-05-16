@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LATIHAN</title>
+  </head>
+  <body>
+    <h2>CETAK LAYAR</h2>
+    <pre>
+      console.log('Hello World!');
+      document.write('Hello World!');
+      alert('Hello World!');
+    </pre>
+    <script>
+      // console.log('Hello World!');
+      document.write('Hello World!');
+      // alert('Hello World!');
+    </script>
+    <hr />
+    <h2>VARIABLE & TIPE DATA</h2>
+    <pre>
+      
+      const nama = 'Rio';
+      const umur = 27;
+      const isEmployee = true;
+  
+      document.write(`Hello my name is ${nama}`);
+      document.write(`i'am ${umur} years old`);
+      document.write(`position as an employee : ${isEmployee}`);
+    </pre>
+    <script>
+      const name = 'Rio';
+      const age = 27;
+      const isEmployee = true;
+
+      document.write(`<p>Name : ${name}</p>`);
+      document.write(`<p>Age : ${age}</p>`);
+      document.write(`position as an employee : ${isEmployee}`);
+    </script>
+    <hr />
+    <h2>OPERATOR</h2>
+    <pre>
+      let a = 15;
+      let b = 10;
+
+      document.write('Penjumlahan = ' + (a + b));
+      document.write('Pengurangan = ' + (a - b));
+      document.write('Perkalian = ' + a * b);
+      document.write('Pembagian = ' + a / b);
+      document.write('Modulus = ' + (a % b));
+    </pre>
+    <script>
+      let a = 15;
+      let b = 10;
+
+      document.write('<p>Penjumlahan = ' + (a + b) + '</p>');
+      document.write('<p>Pengurangan = ' + (a - b) + '</p>');
+      document.write('<p>Perkalian = ' + a * b + '</p>');
+      document.write('<p>Pembagian = ' + a / b + '</p>');
+      document.write('<p>Modulus = ' + (a % b) + '</p>');
+    </script>
+    <hr />
+    <h2>KONDISIONAL (IF ELSE)</h2>
+    <pre>
+      const angka = -4;
+
+      for (let i = 0; i < angka.length; i++) {
+        if (angka[i] > 0) {
+          document.write('Angka ' + angka[i] + ' bernilai POSITIF');
+        } else if (angka[i] < 0) {
+          document.write('Angka ' + angka[i] + ' bernilai NEGATIF');
+        } else {
+          document.write('Bukan angka');
+        }
+      }
+    </pre>
+    <script>
+      const angka = -4;
+
+      if (angka > 0) {
+        document.write('<p>Angka ' + angka + ' bernilai POSITIF</p>');
+      } else if (angka < 0) {
+        document.write('<p>Angka ' + angka + ' bernilai NEGATIF</p>');
+      } else {
+        document.write('Bukan angka');
+      }
+    </script>
+    <hr />
+    <h2>PERULANGAN (FOR LOOP)</h2>
+    <pre>
+      for (let y = 1; y <= 10; y++) {
+        document.writeln(y);
+      }
+    </pre>
+    <script>
+      for (let y = 1; y <= 10; y++) {
+        document.writeln(y);
+      }
+    </script>
+    <hr />
+    <h2>ARRAY</h2>
+    <pre>
+      const arr = ['Rio', 27, true];
+
+      for (let z = 0; z < arr.length; z++) {
+        document.writeln(arr[z]);
+      }
+    </pre>
+    <script>
+      const arr = ['Rio', 27, true];
+
+      for (let z = 0; z < arr.length; z++) {
+        document.writeln('<p>' + arr[z] + '</p>');
+      }
+    </script>
+    <hr />
+    <h2>FUNCTION</h2>
+    <pre>
+      function ganjilGenap(angka) {
+        if (angka % 2 === 0) {
+          document.write('Angka Genap');
+        } else {
+          document.write('Angka Ganjil');
+        }
+        return angka;
+      }
+      ganjilGenap(4);
+
+      // Fungsi menghitung luas persegi panjang
+      function luasPersegi(panjang, lebar) {
+        return panjang * lebar;
+      }
+
+      document.write('Luas Persegi panjang = ' + luasPersegi(3, 4));
+
+      // Fungsi untuk menerima string ke dalam huruf besar
+      function toUpperCase(str) {
+        return str.toUpperCase();
+      }
+
+      document.write(toUpperCase('rio vernando'));
+      document.write(toUpperCase('evan kristi'));
+
+      // Fungsi konversi suhu
+      // Celcius To Fahrenheit
+      function celciusFahrenheit(celcius) {
+        return (celcius * 9) / 5 + 32;
+      }
+
+      // Fahrenheit to Celcius
+      function fahrenheitCelcius(fahrenheit) {
+        return ((fahrenheit - 32) * 5) / 9;
+      }
+
+      //  Celcius to Kelvin
+      function celciusKelvin(celcius) {
+        return celcius + 273.15;
+      }
+
+      // Kelvin to Celcius
+      function kelvinCelcius(kelvin) {
+        return kelvin - 273.15;
+      }
+
+      // Fahrenheit to Kelvin
+      function fahrenheitKelvin(fahrenheit) {
+        return ((fahrenheit - 32) * 5) / 9 + 273.15;
+      }
+
+      // Kelvin to Fahrenheit
+      function kelvnFahrenheit(kelvin) {
+        return ((kelvin - 273.15) * 9) / 5 + 32;
+      }
+
+      let celcius = 34;
+      let fahrenheit = 22;
+      let kelvin = 40.14;
+
+      // konv celcius ke fahrenheit
+      document.write(`${celcius} °C = ${celciusFahrenheit(celcius)} °F`);
+
+      // konv fahrenheit ke celcius
+      document.write(`${fahrenheit} °F = ${fahrenheitCelcius(fahrenheit)} °F`);
+
+      // konv celcius ke kelvin
+      document.write(`${celcius} °C = ${celciusKelvin(celcius)} °K`);
+
+      // konv kelvin ke celcius
+      document.write(`${kelvin} °K = ${kelvinCelcius(kelvin)} °C`);
+
+      // konv fahrenheit ke kelvin
+      document.write(`${fahrenheit} °F = ${fahrenheitKelvin(fahrenheit)} °K`);
+
+      // konv kelvin ke fahrenheit
+      document.write(`${kelvin} °K = ${kelvnFahrenheit(kelvin)} °F`);
+    </pre>
+    <script>
+      // Fungsi ganji genap
+      function ganjilGenap(num) {
+        if (num % 2 === 0) {
+          document.write('<p>Angka Genap</p>');
+        } else {
+          document.write('<p>Angka Ganjil</p>');
+        }
+        return num;
+      }
+      ganjilGenap(7);
+
+      // Fungsi menghitung luas persegi panjang
+      function luasPersegi(panjang, lebar) {
+        return panjang * lebar;
+      }
+
+      document.write('Luas Persegi panjang = ' + luasPersegi(3, 4));
+
+      // Fungsi untuk menerima string ke dalam huruf besar
+      function toUpperCase(str) {
+        return str.toUpperCase();
+      }
+
+      document.write(toUpperCase('<p>rio vernando</p>'));
+      document.write(toUpperCase('<p>evan kristi</p>'));
+
+      // Fungsi konversi suhu
+      // Celcius To Fahrenheit
+      function celciusFahrenheit(celcius) {
+        return (celcius * 9) / 5 + 32;
+      }
+
+      // Fahrenheit to Celcius
+      function fahrenheitCelcius(fahrenheit) {
+        return ((fahrenheit - 32) * 5) / 9;
+      }
+
+      //  Celcius to Kelvin
+      function celciusKelvin(celcius) {
+        return celcius + 273.15;
+      }
+
+      // Kelvin to Celcius
+      function kelvinCelcius(kelvin) {
+        return kelvin - 273.15;
+      }
+
+      // Fahrenheit to Kelvin
+      function fahrenheitKelvin(fahrenheit) {
+        return ((fahrenheit - 32) * 5) / 9 + 273.15;
+      }
+
+      // Kelvin to Fahrenheit
+      function kelvnFahrenheit(kelvin) {
+        return ((kelvin - 273.15) * 9) / 5 + 32;
+      }
+
+      let celcius = 34;
+      let fahrenheit = 22;
+      let kelvin = 40.14;
+
+      // konv celcius ke fahrenheit
+      document.write(`<p>${celcius} °C = ${celciusFahrenheit(celcius)} °F</p>`);
+
+      // konv fahrenheit ke celcius
+      document.write(`<p>${fahrenheit} °F = ${fahrenheitCelcius(fahrenheit)} °F</p>`);
+
+      // konv celcius ke kelvin
+      document.write(`<p>${celcius} °C = ${celciusKelvin(celcius)} °K</p>`);
+
+      // konv kelvin ke celcius
+      document.write(`<p>${kelvin} °K = ${kelvinCelcius(kelvin)} °C</p>`);
+
+      // konv fahrenheit ke kelvin
+      document.write(`<p>${fahrenheit} °F = ${fahrenheitKelvin(fahrenheit)} °K</p>`);
+
+      // konv kelvin ke fahrenheit
+      document.write(`<p>${kelvin} °K = ${kelvnFahrenheit(kelvin)} °F</p>`);
+    </script>
+    <hr />
+    <h2>OBJECT</h2>
+    <pre>
+      // Objek sederhana
+      const person = {
+        name: 'Rio Vernando',
+        age: 27,
+        isEmployee: true,
+      };
+      document.write(`Nama : ${person.name}`);
+      document.write(`Usia : ${person.age}`);
+      document.write(`Pekerjaan Karyawan : ${person.isEmployee}`);
+
+      // Objek dengan method
+      const car = {
+        make: 'Toyota',
+        model: 'Avanza',
+        year: 2000,
+        start: function () {
+          document.write('Car Started');
+        },
+        carInfo: function () {
+          return `${this.make} ${this.model} ${this.year}`;
+        },
+      };
+      car.start();
+      document.write(car.carInfo());
+
+      // Objek Bersarang
+      const mhs = {
+        nama: 'Evan Kristi',
+        nim: 145410169,
+        alamat: {
+          kota: 'Nanga Pinoh',
+          jalan: 'Jl. Karya Lestari',
+          kabupaten: 'Melawi',
+        },
+        jurusan: ['Teknik Informatika', 'Sistem Informasi', 'Teknik Komputer'],
+      };
+      document.write('Nama Mahasiswa : ' + mhs.nama + '');
+      document.write('NIM : ' + mhs.nim + '');
+      document.write('Alamat : ' + mhs.alamat.kota + '');
+      document.write('Jurusan : ' + mhs.jurusan[0] + '');
+
+      // Objek Dengan 'this'
+      const user = {
+        username: 'Rio Vernando',
+        email: 'riojr997@gmail.com',
+        greet: function () {
+          document.write(`Hallo my name is ${this.username}`);
+        },
+      };
+      user.greet();
+
+      // Objek Dengan Konstruktor
+      function teleponGenggam(merk, tipe, tahun) {
+        this.merk = merk;
+        this.tipe = tipe;
+        this.tahun = tahun;
+      }
+
+      const hp1 = new teleponGenggam('Asus', 'M2 Pro', 2019);
+      const hp2 = new teleponGenggam('Oppo', 'Y15', 2020);
+
+      document.write('Merk HP Rio : ' + hp2.merk + '');
+      document.write('Merk HP Rival : ' + hp1.merk + '');
+    </pre>
+    <script>
+      // Objek sederhana
+      const person = {
+        name: 'Rio Vernando',
+        age: 27,
+        isEmployee: true,
+      };
+      document.write(`<p>Nama : ${person.name}</p>`);
+      document.write(`<p>Usia : ${person.age}</p>`);
+      document.write(`<p>Pekerjaan Karyawan : ${person.isEmployee}</p>`);
+
+      // Objek dengan method
+      const car = {
+        make: 'Toyota',
+        model: 'Avanza',
+        year: 2000,
+        start: function () {
+          document.write('<p>Car Started</p>');
+        },
+        carInfo: function () {
+          return `<p>${this.make} ${this.model} ${this.year}</p>`;
+        },
+      };
+      car.start();
+      document.write(car.carInfo());
+
+      // Objek Bersarang
+      const mhs = {
+        nama: 'Evan Kristi',
+        nim: 145410169,
+        alamat: {
+          kota: 'Nanga Pinoh',
+          jalan: 'Jl. Karya Lestari',
+          kabupaten: 'Melawi',
+        },
+        jurusan: ['Teknik Informatika', 'Sistem Informasi', 'Teknik Komputer'],
+      };
+      document.write('<p>Nama Mahasiswa : ' + mhs.nama + '</p>');
+      document.write('<p>NIM : ' + mhs.nim + '</p>');
+      document.write('<p>Alamat : ' + mhs.alamat.kota + '</p>');
+      document.write('<p>Jurusan : ' + mhs.jurusan[0] + '</p>');
+
+      // Objek Dengan 'this'
+      const user = {
+        username: 'Rio Vernando',
+        email: 'riojr997@gmail.com',
+        greet: function () {
+          document.write(`<p>Hallo my name is ${this.username}</p>`);
+        },
+      };
+      user.greet();
+
+      // Objek Dengan Konstruktor
+      function teleponGenggam(merk, tipe, tahun) {
+        this.merk = merk;
+        this.tipe = tipe;
+        this.tahun = tahun;
+      }
+
+      const hp1 = new teleponGenggam('Asus', 'M2 Pro', 2019);
+      const hp2 = new teleponGenggam('Oppo', 'Y15', 2020);
+
+      document.write('<p>Merk HP Rio : ' + hp2.merk + '</p>');
+      document.write('<p>Merk HP Rival : ' + hp1.merk + '</p>');
+    </script>
+  </body>
+</html>

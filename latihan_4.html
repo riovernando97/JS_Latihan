@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Dasar</title>
+  </head>
+  <body>
+    <h1>LATIHAN FUNCTION_ARRAY</h1>
+    <h3>Buka di console browser =></h3>
+    <pre>
+      let penumpang = ['Rio', undefined, 'Rival'];
+      let tambahPenumpang = function (namaPenumpang, penumpang) {
+        // jika angkot kosong
+        if (penumpang.length == 0) {
+          // tambah penumpang didalam array
+          penumpang.push(namaPenumpang);
+          // kembalikan nilai array & keluar dari function
+          return penumpang;
+        } else {
+          // telusuri seluruh kursi dari awal
+          for (let i = 0; i < penumpang.length; i++) {
+            // jika ada kursi kosong
+            if (penumpang[i] == undefined) {
+              // tambah penumpang dikursi tersebut
+              penumpang[i] = namaPenumpang;
+              // kembalikan nilai array & keluar dari function
+              return penumpang;
+            }
+            // jika sudah ada nama yg sama
+            else if (penumpang[i] == namaPenumpang) {
+              // tampilkan pesan error
+              console.log(namaPenumpang + ' sudah ada didalam angkot !!!');
+              // kembalikan nilai array dan keluar dari function
+              return penumpang;
+            }
+            // jika seluruh kursi terisi
+            else if (i == penumpang.length - 1) {
+              // tambah penumpang di akhir array
+              penumpang.push(namaPenumpang);
+              // kembalikan nilai array dan keluar dari function
+              return penumpang;
+            }
+          }
+        }
+      };
+      
+      // Function hapusPenumpang()
+      let hapusPenumpang = function (namaPenumpang, penumpang) {
+        if (penumpang.length == 0) {
+          console.log('Angkot masih kosong');
+        } else {
+          for (let i = 0; i < penumpang.length; i++) {
+            if (penumpang[i] == namaPenumpang) {
+              penumpang[i] = undefined;
+            } else if (i == penumpang.length - 1) {
+              console.log(namaPenumpang + ' tidak ada didalam angkot');
+              return penumpang;
+            }
+          }
+        }
+        return penumpang;
+      };
+    </pre>
+    <script>
+      // Function tambahPenumpang()
+      let penumpang = ['Rio', undefined, 'Rival'];
+      let tambahPenumpang = function (namaPenumpang, penumpang) {
+        // jika angkot kosong
+        if (penumpang.length == 0) {
+          // tambah penumpang didalam array
+          penumpang.push(namaPenumpang);
+          // kembalikan nilai array & keluar dari function
+          return penumpang;
+        } else {
+          // telusuri seluruh kursi dari awal
+          for (let i = 0; i < penumpang.length; i++) {
+            // jika ada kursi kosong
+            if (penumpang[i] == undefined) {
+              // tambah penumpang dikursi tersebut
+              penumpang[i] = namaPenumpang;
+              // kembalikan nilai array & keluar dari function
+              return penumpang;
+            }
+            // jika sudah ada nama yg sama
+            else if (penumpang[i] == namaPenumpang) {
+              // tampilkan pesan error
+              console.log(namaPenumpang + ' sudah ada didalam angkot !!!');
+              // kembalikan nilai array dan keluar dari function
+              return penumpang;
+            }
+            // jika seluruh kursi terisi
+            else if (i == penumpang.length - 1) {
+              // tambah penumpang di akhir array
+              penumpang.push(namaPenumpang);
+              // kembalikan nilai array dan keluar dari function
+              return penumpang;
+            }
+          }
+        }
+      };
+
+      // Function hapusPenumpang()
+      let hapusPenumpang = function (namaPenumpang, penumpang) {
+        if (penumpang.length == 0) {
+          console.log('Angkot masih kosong');
+        } else {
+          for (let i = 0; i < penumpang.length; i++) {
+            if (penumpang[i] == namaPenumpang) {
+              penumpang[i] = undefined;
+            } else if (i == penumpang.length - 1) {
+              console.log(namaPenumpang + ' tidak ada didalam angkot');
+              return penumpang;
+            }
+          }
+        }
+        return penumpang;
+      };
+    </script>
+  </body>
+</html>

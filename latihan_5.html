@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Dasar</title>
+  </head>
+  <body>
+    <h1>LATIHAN OBJECT_FUNCTION</h1>
+    <h3>Buka di console browser =></h3>
+    <pre></pre>
+    <script>
+      // membuat object angkot
+      function Angkot(sopir, trayek, penumpang, kas) {
+        this.sopir = sopir;
+        this.trayek = trayek;
+        this.penumpang = penumpang;
+        this.kas = kas;
+
+        // Function penumpang naik
+        this.penumpangNaik = function (namaPenumpang) {
+          this.penumpang.push(namaPenumpang);
+          return this.penumpang;
+        };
+
+        // function penumpang turun
+        this.penumpangTurun = function (namaPenumpang, bayar) {
+          if (this.penumpang.length === 0) {
+            alert('Angkot masih kosong');
+            return false;
+          }
+        };
+      }
+
+      let angkot1 = new Angkot('Rio', ['Pinoh', 'Menukung', 'Serawai'], [], 0);
+      let angkot2 = new Angkot('Evan', ['Sintang', 'Sanggau', 'Sekadau'], [], 0);
+    </script>
+  </body>
+</html>

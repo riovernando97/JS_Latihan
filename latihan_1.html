@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Dasar</title>
+  </head>
+  <body>
+    <h1>LATIHAN FOR_WHILE</h1>
+    <pre>
+      let jmlAngkot = 10;
+      let noAngkot = 1;
+      let angkotBeroperasi = 4;
+      while (noAngkot <= angkotBeroperasi) {
+        document.writeln('Angkot No. ' + noAngkot + ' beroperasi dengan baik');
+        noAngkot++;
+      }
+      
+      for (let noAngkot = angkotBeroperasi + 1; noAngkot <= jmlAngkot; noAngkot++) {
+        document.writeln('Angkot No. ' + noAngkot + ' sedang tidak beroperasi');
+      }
+    </pre>
+    <p>Output :</p>
+    <script>
+      let jmlAngkot = 10;
+      let noAngkot = 1;
+      let angkotBeroperasi = 4;
+      while (noAngkot <= angkotBeroperasi) {
+        document.writeln('<p>Angkot No. ' + noAngkot + ' beroperasi dengan baik</p>');
+        noAngkot++;
+      }
+
+      for (let noAngkot = angkotBeroperasi + 1; noAngkot <= jmlAngkot; noAngkot++) {
+        document.writeln('<p>Angkot No. ' + noAngkot + ' sedang tidak beroperasi</p>');
+      }
+    </script>
+  </body>
+</html>
