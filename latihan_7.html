@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Dasar</title>
+  </head>
+  <body>
+    <h1>LATIHAN Map, Filter, Reduce</h1>
+    <h3>My Videos</h3>
+    <ul>
+      <li data-duration="15:27">TUTORIAL MASAK | Sop Iga Sapi</li>
+      <li data-duration="11:18">TUTORIAL MASAK | Bakso Urat</li>
+      <li data-duration="21:40">Daily Vlog #1</li>
+      <li data-duration="19:38">TUTORIAL MASAK | Pempek Khas Palembang</li>
+      <li data-duration="12:10">Daily Vlog #2</li>
+      <li data-duration="20:43">Daily Vlog #3</li>
+      <li data-duration="14:30">TUTORIAL MASAK | Ikan Paten Asam Pedas</li>
+      <li data-duration="26:38">MotoVlog #30</li>
+      <li data-duration="17:33">Daily Vlog #4</li>
+      <li data-duration="10:39">TUTORIAL MASAK | Dendeng Asam Pedas</li>
+      <li data-duration="17:31">MotoVlog #31</li>
+      <li data-duration="14:25">TUTORIAL MASAK | Rica-Rica Gurame</li>
+      <li data-duration="27:50">TUTORIAL MASAK | Ayam Ampela Mercon</li>
+      <li data-duration="49:17">MotoVlog #32</li>
+      <li data-duration="20:22">TUTORIAL MASAK | Babi Panggang Kremes</li>
+    </ul>
+
+    <h3>My Playlist</h3>
+    <ol>
+      <li>
+        <h4>Tutorial Masak</h4>
+        <p>Jumlah Video : <span class="jumlah-video"></span></p>
+        <p>Total Durasi : <span class="total-durasi"></span></p>
+      </li>
+      <li>
+        <h4>Daily Vlog</h4>
+        <p>Jumlah Video : <span class="jumlah-video2"></span></p>
+        <p>Total Durasi : <span class="total-durasi2"></span></p>
+      </li>
+    </ol>
+    <pre></pre>
+    <script>
+      // ambil semua elemen video
+      const Tmasak = Array.from(document.querySelectorAll('[data-duration'));
+
+      // pilih hanya yg "TUTORIAL MASAK"
+      let TutorMasak = Tmasak.filter((video) => video.textContent.includes('TUTORIAL MASAK'))
+
+        // ambil durasi masing2 video
+        .map((item) => item.dataset.duration)
+        // ubah durasi menjadi int, ubah menit menjadi detik
+        .map((waktu) => {
+          // 10:30 -> [10, 30] use split
+          const parts = waktu.split(':').map((part) => parseFloat(part));
+          return parts[0] * 60 + parts[1];
+        })
+        // jumlahkan semua detik
+        .reduce((total, detik) => total + detik);
+      // ubah formatnya jadi jam menit detik
+      const jam = Math.floor(TutorMasak / 3600);
+      TutorMasak = TutorMasak - jam * 3600;
+      const menit = Math.floor(TutorMasak / 60);
+      const detik = TutorMasak - menit * 60;
+
+      // simpan di DOM
+      const pDurasi = document.querySelector('.total-durasi');
+      pDurasi.textContent = `${jam} Jam, ${menit} Menit, ${detik} Detik`;
+
+      const jmlVideo = Tmasak.filter((video) => video.textContent.includes('TUTORIAL MASAK')).length;
+      const pJmlVideo = document.querySelector('.jumlah-video');
+      pJmlVideo.textContent = `${jmlVideo} Video`;
+
+      // Daily Vlog
+      const DVlog = Array.from(document.querySelectorAll('[data-duration]'));
+
+      let DailyVlog = DVlog.filter((video) => video.textContent.includes('Daily Vlog'))
+
+        .map((item) => item.dataset.duration)
+
+        .map((waktu) => {
+          const parts = waktu.split(':').map((part) => parseFloat(part));
+          return parts[0] * 60 + parts[1];
+        })
+
+        .reduce((total, detik) => total + detik);
+
+      const jam2 = Math.floor(DailyVlog / 3600);
+      DailyVlog = DailyVlog - jam2 * 3600;
+      const menit2 = Math.floor(DailyVlog / 60);
+      const detik2 = DailyVlog - menit2 * 60;
+
+      const pDurasi2 = document.querySelector('.total-durasi2');
+      pDurasi2.textContent = `${jam2} Jam, ${menit2} Menit, ${detik2} Detik`;
+
+      const jmlVideo2 = DVlog.filter((video) => video.textContent.includes('Daily Vlog')).length;
+      const pJmlVideo2 = document.querySelector('.jumlah-video2');
+      pJmlVideo2.textContent = `${jmlVideo2} Video`;
+    </script>
+  </body>
+</html>
