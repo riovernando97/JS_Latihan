@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Lanjutan</title>
+  </head>
+  <body>
+    <h1><u>Latihan Template Literal</u></h1>
+    <hr />
+    <script>
+      // HTML Fragments
+      const person = {
+        name: 'Kristian Rio Vernando',
+        age: 27,
+      };
+
+      const a = `
+      <div class="person">
+        <h2>${person.name}</h2>
+        <span class="umur">${person.age}</span>
+      </div>`;
+      document.body.innerHTML = a;
+
+      // Looping
+      const books = [
+        {
+          title: 'Javascript From Zero to Hero',
+          author: 'Rivalno',
+          year: 2015,
+        },
+        {
+          title: 'Programming Algorthm',
+          author: 'Evan Kristi',
+          year: 2017,
+        },
+        {
+          title: 'Web Development With HTML, CSS & Javascript',
+          author: 'Noven',
+          year: 2019,
+        },
+      ];
+
+      const b = `
+      <div class="books">
+        ${books
+          .map(
+            (bk) => `<ul>
+          <li>${bk.title}</li>
+          <li>${bk.author}</li>
+          <li>${bk.year}</li>
+        </ul>`
+          )
+          .join('')}
+      </div>`;
+      document.body.innerHTML = b;
+
+      // Conditional with ternary operator
+      const songs = {
+        judul: 'Dear God',
+        band: 'Avenged Sevenfold',
+        feat: 'Corey Taylor',
+      };
+
+      const c = `
+      <div class="songs">
+      <h2>My Songs</h2>
+      <ul>
+        <li>${songs.judul}</li>
+        <li>${songs.band} ${songs.feat ? `(feat. ${songs.feat})` : ''}</li>
+      </ul>
+      </div>`;
+      document.body.innerHTML = c;
+
+      // Nested (HTML Fragments Bersarang)
+      const mhs = {
+        nama: 'Fonglin',
+        semester: 5,
+        matakuliah: ['Rekayasa Web', 'Pemrograman Web', 'Algoritma Pemrograman', 'Metode Numerik', 'Struktur Data', 'Basis Data', 'Konsep Cloud Computing', 'Matematika Dasar'],
+      };
+
+      function cetakMatakuliah(matakuliah) {
+        return `
+        <ol>
+          ${matakuliah.map((mk) => `<li>${mk}</li>`).join('')}
+        </ol>
+        `;
+      }
+
+      const d = `<div class="mhs">
+        <h2>${mhs.nama}</h2>
+          <span class="semester">Semester : ${mhs.semester}</span>
+            <h4>Mata Kuliah :</h4>
+            ${cetakMatakuliah(mhs.matakuliah)}
+      </div>`;
+
+      document.body.innerHTML = d;
+    </script>
+  </body>
+</html>
