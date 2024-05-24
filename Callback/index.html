@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Search</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col">
+          <h1>Movie Database</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control input-keyword" placeholder="Search Movie . . ." aria-label="Search Movie . . ." aria-describedby="button-addon2" />
+            <div class="input-group-append">
+              <button class="btn btn-primary search-btn" type="button">Search</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row movie-container"></div>
+    </div>
+
+    <!-- awal modal -->
+    <div class="modal fade" id="movieDetailModal" tabindex="-1" role="dialog" aria-labelledby="movieDetailModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="movieDetailModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- akhir modal -->
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Script.js -->
+    <script src="script.js"></script>
+  </body>
+</html>
