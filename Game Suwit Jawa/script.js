@@ -1,58 +1,38 @@
-// warna ditentukan
-document.getElementById('BtnUbah').addEventListener('click', function () {
-  // document.body.style.backgroundColor = 'lightblue';
-  // document.body.setAttribute('class', 'biru-muda');
-  // document.body.removeAttribute('class', 'biru-muda');
-  document.body.classList.toggle('biru-muda');
-});
+let tanya = true;
+while (tanya) {
+  // Menangkap pilihan player
+  let p = prompt('Pilih : gajah, semut, orang');
 
-// button baru
-// Warna acak
-const BtnRandom = document.createElement('button');
-const teksBtn = document.createTextNode('Acak Warna');
-BtnRandom.appendChild(teksBtn);
-BtnRandom.setAttribute('type', 'button');
-BtnUbah.after(BtnRandom);
+  // Menangkap pilihan komputer
+  // Membangkitkan bilangan random
+  let comp = Math.round(Math.random(p));
 
-BtnRandom.addEventListener('click', function () {
-  const r = Math.round(Math.random() * 255 + 1);
-  const g = Math.round(Math.random() * 255 + 1);
-  const b = Math.round(Math.random() * 255 + 1);
+  if (comp < 0) {
+    comp = 'gajah';
+  } else if (comp >= 0 && comp < 1) {
+    comp = 'orang';
+  } else {
+    comp = 'semut';
+  }
 
-  document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-});
+  let hasil = '';
 
-// slider warna
-const sMerah = document.querySelector('input[name=sMerah]');
-const sHijau = document.querySelector('input[name=sHijau]');
-const sBiru = document.querySelector('input[name=sBiru]');
+  // Menentukan rules
+  if (p == comp) {
+    hasil = 'SERI !';
+  } else if (p == 'gajah') {
+    hasil = comp == 'orang' ? 'MENANG !!!' : 'KALAH !!!';
+  } else if (p == 'orang') {
+    hasil = comp == 'gajah' ? 'KALAH !!!' : 'MENANG !!!';
+  } else if (p == 'semut') {
+    hasil = comp == 'orang' ? 'KALAH !!!' : 'MENANG !!!';
+  } else {
+    hasil = 'pilihan tidak valid !!!';
+  }
+  // tampilkan hasilnya
+  alert(`Kamu memilih ${p}, dan komputer memilih : ${comp} \nMaka hasilnya : ${hasil}`);
 
-sMerah.addEventListener('input', function () {
-  const r = sMerah.value;
-  const g = sHijau.value;
-  const b = sBiru.value;
-  document.body.style.backgroundColor = `rgb(${r}, ${g}, 100)`;
-});
+  tanya = confirm('Lagi ?');
+}
 
-sHijau.addEventListener('input', function () {
-  const r = sMerah.value;
-  const g = sHijau.value;
-  const b = sBiru.value;
-  document.body.style.backgroundColor = `rgb(${r}, ${g}, 100)`;
-});
-
-sBiru.addEventListener('input', function () {
-  const r = sMerah.value;
-  const g = sHijau.value;
-  const b = sBiru.value;
-  document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-});
-
-// Mouse move color
-document.body.addEventListener('mousemove', function (event) {
-  // posisi mouse
-  const xPos = Math.round((event.clientX / window.innerWidth) * 255);
-  console.log(xPos);
-  const yPos = Math.round((event.clientY / window.innerHeight) * 255);
-  document.body.style.backgroundColor = `rgb(${xPos}, ${yPos}, 100)`;
-});
+alert('Terimakasih sudah bermain . . .');
